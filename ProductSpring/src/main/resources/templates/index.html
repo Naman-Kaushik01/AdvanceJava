@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml" xlmns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Data Displayed</h2>
+<table border="2" cellpadding="10">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="product :${data}">
+<td th:text="${product.id}"></td>
+<td th:text="${product.name}"></td>
+<td th:text="${product.price}"></td>
+</tr>
+</tbody>
+
+</table>
+</body>
+</html>

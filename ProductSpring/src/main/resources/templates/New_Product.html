@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml" xlmns:th="http://www.thymleaf.org">
+<meta charset="ISO-8859-1">
+<title>Add data</title>
+<head>
+<style>
+    body {
+      background: #f3f4f6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .form-container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .form-container h2 {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #6366f1;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+
+
+ <div class="form-container">
+    <h2>Product Entry</h2>
+    <form action="#" th:action="@{/add}" th:object="${product}" method="post">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" th:filled="*{name}"id="name" name="name" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" th:filled="*{price}id="price" name="price" placeholder="Enter price">
+      </div>
+      <button type="Submit">Add</button>
+    </form>
+  </div>
+
+
+
+</body>
+</html>
